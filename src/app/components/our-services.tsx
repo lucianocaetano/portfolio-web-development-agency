@@ -50,7 +50,7 @@ const OurServices = () => {
             >
               Our Services
             </h1>
-            <p className="text-[#0e141b] text-base font-normal leading-normal max-w-[720px]">We offer a range of services to help you with your web development needs.</p>
+            <p className="text-[#0e141b] text-base font-normal leading-normal max-w-[720px]">We offer a range of services to help you with your software development needs.</p>
           </div>
           <Button
             className="rounded-full p-6 mt-5"

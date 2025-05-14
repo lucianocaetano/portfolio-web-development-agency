@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`, "relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden")} 
-        style={{fontFamily: "Plus Jakarta Sans, Noto Sans, sans-serif"}}
+        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`, "relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden")}
+        style={{ fontFamily: "Plus Jakarta Sans, Noto Sans, sans-serif" }}
       >
-        {children}
+        <Navbar />
+        <main className="layout-container h-full w-full grow lg:px-48 justify-center flex flex-col flex-1 py-8 space-y-16">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

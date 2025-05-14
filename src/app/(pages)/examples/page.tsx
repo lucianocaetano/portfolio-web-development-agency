@@ -51,13 +51,13 @@ const Examples = () => {
   return (
     <div className="mb-8">
       <div className="layout-container flex h-full grow flex-col">
-        <div className="lg:px-40 flex flex-1 justify-center">
+        <div className="flex flex-1 justify-center">
           <div className="layout-content-container flex-col max-w-7xl px-4">
             {
               projects.map((project) => (
                 <div key={project.name} className="space-y-8 my-11">
                   <div className="space-y-8 max-xl:flex-col-reverse xl:items-start items-center flex justify-between">
-                    <div className="space-y-4 w-1/2 pt-2">
+                    <div className="space-y-4 pt-2">
                       <h1 className="text-5xl font-serif">{project.name}</h1>
                       <p className="pe-8">
                         {project.content}

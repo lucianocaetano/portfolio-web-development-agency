@@ -52,21 +52,26 @@ const Examples = () => {
     <div className="mb-8">
       <div className="layout-container flex h-full grow flex-col">
         <div className="flex flex-1 justify-center">
-          <div className="layout-content-container flex-col max-w-7xl px-4">
+          <div className="layout-content-container flex-col px-4">
+            <h1
+              className="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+            >
+              Our Projects
+            </h1>
             {
               projects.map((project) => (
-                <div key={project.name} className="space-y-8 my-11">
-                  <div className="space-y-8 max-xl:flex-col-reverse xl:items-start items-center flex justify-between">
+                <div key={project.name} className="space-y-8 my-11 w-full">
+                  <div className="space-y-8 grid gap-2 md:grid-cols-2">
                     <div className="space-y-4 pt-2">
                       <h2 className="text-3xl">{project.name}</h2>
                       <p className="pe-8">
                         {project.content}
                       </p>
                     </div>
-                    <div className="w-1/2">
+                    <div>
                       {
                         project.images.length === 1 && (
-                          <Image src={project.images[0]} alt={project.name} width={700} height={800} className="max-h-[700px] object-contain" />
+                          <Image src={project.images[0]} alt={project.name} width={700} height={400} className="max-h-[400px] object-contain" />
                         )
                       }
                       {

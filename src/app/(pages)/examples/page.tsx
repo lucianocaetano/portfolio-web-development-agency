@@ -31,23 +31,23 @@ const projects = [
     name: "Order management",
     content: "A web application for a home delivery company, including a blog and online sales system, as well as a contact section.",
     images: [
-      "/landing_page_package_django/image 1.png", 
+      "/landing_page_package_django/image 1.png",
       "/landing_page_package_django/image 2.png",
       "/landing_page_package_django/image 3.png",
       "/landing_page_package_django/image 4.png",
     ]
   },
   {
-    name: 'Space launch website',
-    content: "Development and update of the website for 'Space Launches'. This project consisted of a partial redesign focused on improving the visual presentation and organization of content (upcoming launches, recent videos), along with a complete migration from HTML to Astro to improve loading speed, maintainability, and offer a smoother browsing experience.",
+    name: 'LanzamientosEspaciales\' website',
+    content: "Development and update of the website for 'LanzamientosEspaciales'. This project consisted of a partial redesign focused on improving the visual presentation and organization of content (upcoming launches, recent videos), along with a complete migration from HTML to Astro to improve loading speed, maintainability, and offer a smoother browsing experience.",
     images: [
-      '/spacial_web/santif project.png', 
+      '/spacial_web/santif project.png',
     ]
   }
 ]
 
 const Examples = () => {
- 
+
   return (
     <div className="mb-8">
       <div className="layout-container flex h-full grow flex-col">
@@ -66,7 +66,7 @@ const Examples = () => {
                     <div className="w-1/2">
                       {
                         project.images.length === 1 && (
-                          <Image src={project.images[0]} alt={project.name} width={700} height={800} className="max-h-[700px] object-contain"/>
+                          <Image src={project.images[0]} alt={project.name} width={700} height={800} className="max-h-[700px] object-contain" />
                         )
                       }
                       {
@@ -76,7 +76,7 @@ const Examples = () => {
                               {
                                 project.images.map((image, index) => (
                                   <CarouselItem key={index} className="flex justify-center items-center">
-                                    <Image src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain"/>
+                                    <Image src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain" />
                                   </CarouselItem>
                                 ))
                               }
@@ -90,7 +90,7 @@ const Examples = () => {
                   </div>
                 </div>
               ))
-            } 
+            }
           </div>
         </div>
       </div>

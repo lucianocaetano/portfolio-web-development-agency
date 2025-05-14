@@ -58,7 +58,7 @@ const Examples = () => {
                 <div key={project.name} className="space-y-8 my-11">
                   <div className="space-y-8 max-xl:flex-col-reverse xl:items-start items-center flex justify-between">
                     <div className="space-y-4 pt-2">
-                      <h1 className="text-5xl font-serif">{project.name}</h1>
+                      <h2 className="text-3xl">{project.name}</h2>
                       <p className="pe-8">
                         {project.content}
                       </p>

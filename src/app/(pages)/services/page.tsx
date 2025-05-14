@@ -70,7 +70,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
     <li key={name} className="text-lg max-w-7xl w-full flex justify-between items-center p-8 shadow-sm h-full">
       <div className="space-y-6">
         <h2 className="text-xl">{name}</h2>
-        <p className="ms-2 text-md font-serif text-gray-600">{description}</p>
+        <p className="ms-2 text-md text-gray-600">{description}</p>
       </div>
       <div className="pe-5">
         {icon}
@@ -81,7 +81,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
 
 const Services = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-8 py-[100px] space-y-16 font-serif">
+    <div className="w-full max-w-7xl mx-auto px-8 py-[100px] space-y-16">
       <h1 className="text-5xl">Our Services</h1>
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">

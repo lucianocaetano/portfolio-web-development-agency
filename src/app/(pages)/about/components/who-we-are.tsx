@@ -3,7 +3,7 @@ const WhoWeAre = () => {
 
   return (
     <div className="space-y-11 px-4">
-      <h1 className="text-5xl font-serif">Who we are</h1>
+      <h1 className="text-5xl">Who we are</h1>
       <div className="space-y-4">
         <p className="lg:w-[600px] pe-6">
           We are a company specialized in the development and comprehensive management of web pages and applications. Our goal is to provide efficient and customized digital solutions that help boost the online presence of companies and startups like yours.

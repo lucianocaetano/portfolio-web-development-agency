@@ -70,7 +70,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
     <li key={name} className="text-lg max-w-7xl w-full flex justify-between items-center p-8 shadow-sm h-full">
       <div className="space-y-6">
         <h2 className="text-xl">{name}</h2>
-        <p className="ms-2text-md font-serif text-gray-600">{description}</p>
+        <p className="ms-2 text-md font-serif text-gray-600">{description}</p>
       </div>
       <div className="pe-5">
         {icon}
@@ -86,7 +86,7 @@ const Services = () => {
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">
           <h2 className="text-3xl">{section.name}</h2>
-          <ul className="space-y-16 grid grid-cols-4 gap-8">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {section.services.map((service) => (
               <ServiceCard key={service.name} {...service} />
             ))}

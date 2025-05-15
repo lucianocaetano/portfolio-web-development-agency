@@ -50,11 +50,7 @@ const Examples = () => {
 
   return (
     <>
-      <h1
-        className="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-      >
-        Our Projects
-      </h1>
+      <h1 className="text-5xl">Our Projects</h1>
       {
         projects.map((project) => (
           <div key={project.name} className="space-y-8 my-11 w-full">

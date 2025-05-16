@@ -56,7 +56,7 @@ export function ContactForm() {
       if (res.status === 200) {
         toast('Email sent successfully!', {duration: 3000})
       }else{
-        toast('Something went wrong, please try again later', {duration: 3000}) 
+        toast.error('Something went wrong, please try again later', {duration: 3000}) 
       } 
     }) 
 

@@ -44,6 +44,14 @@ const Banner = () => {
                 <span className="truncate">About Us</span>
               </Button>
             </div>
+            <a href="/contact">
+              <Button
+                className="rounded-full p-6"
+                variant={'secondary'}
+              >
+                <span className="truncate">Contact Us</span>
+              </Button>
+            </a>
           </div>
         </div>
       </div>

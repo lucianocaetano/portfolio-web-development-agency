@@ -49,12 +49,13 @@ const OurServices = () => {
             </h1>
             <p className="text-[#0e141b] text-base font-normal leading-normal max-w-[720px]">We offer a range of services to help you with your software development needs.</p>
           </div>
-          <Button
-            className="rounded-full p-6 mt-5"
-            onClick={() => window.history.pushState(null, null, '/services')}
-          >
-            <span className="truncate">Learn More</span>
-          </Button>
+          <a href="/services">
+            <Button
+              className="rounded-full p-6 mt-5"
+            >
+              <span className="truncate">Learn More</span>
+            </Button>
+          </a>
         </div>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">

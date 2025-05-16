@@ -18,7 +18,7 @@ const Banner = () => {
               <h1
                 className="text-background text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
               >
-                Welcome to Acme Co
+                Welcome to Percy Pocket Solutions
               </h1>
               <h2 className="text-background text-sm font-normal w-1/2">
                 We&apos;re a digital agency that designs and develops custom websites, web apps, and APIs for companies of all sizes.

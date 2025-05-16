@@ -12,6 +12,7 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import {NavigationMenuLink} from "@radix-ui/react-navigation-menu"
 
 import { useRouter } from 'next/navigation'
+import MenuMobile from "./menu-mobile"
 
 const Navbar = () => {
   const router = useRouter()
@@ -40,7 +41,10 @@ const Navbar = () => {
         </div>
         
         <div className="flex flex-1 items-center justify-end gap-6">
-          <NavigationMenu>
+          <div className="md:hidden flex">
+            <MenuMobile />
+          </div>
+          <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="gap-4">
               <NavigationMenuItem>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/services">

@@ -24,13 +24,21 @@ const Banner = () => {
                 We&apos;re a digital agency that designs and develops custom websites, web apps, and APIs for companies of all sizes.
               </h2>
             </div>
-            <Button
-              className="rounded-full p-6"
-              variant={'secondary'}
-              onClick={() => router.push('/contact')}
-            >
-              <span className="truncate">Contact Us</span>
-            </Button>
+            <div className="flex gap-4 items-center">
+              <Button
+                className="rounded-full p-6"
+                onClick={() => router.push('/contact')}
+              >
+                <span className="truncate">Get Started</span>
+              </Button>
+              <Button
+                className="rounded-full p-5"
+                variant={'outline'}
+                onClick={() => router.push('/about')}
+              >
+                <span className="truncate">About Us</span>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

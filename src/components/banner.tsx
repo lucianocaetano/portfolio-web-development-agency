@@ -22,13 +22,14 @@ const Banner = () => {
                 We&apos;re a digital agency that designs and develops custom websites, web apps, and APIs for companies of all sizes.
               </h2>
             </div>
-            <Button
-              className="rounded-full p-6"
-              variant={'secondary'}
-              onClick={() => window.history.pushState(null, null, '/contact')}
-            >
-              <span className="truncate">Contact Us</span>
-            </Button>
+            <a href="/contact">
+              <Button
+                className="rounded-full p-6"
+                variant={'secondary'}
+              >
+                <span className="truncate">Contact Us</span>
+              </Button>
+            </a>
           </div>
         </div>
       </div>

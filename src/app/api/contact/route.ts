@@ -32,7 +32,7 @@ export const POST = async (request: Request) => {
   const mailOptions = {
     from: 'freelancerdigitalagency@gmail.com',
     to: data.email,
-    subject: 'posible cliente: ' + data.enterprise,
+    subject: 'possible client: ' + data.enterprise,
     text: data.content,
   };
 

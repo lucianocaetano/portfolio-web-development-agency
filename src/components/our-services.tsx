@@ -1,8 +1,7 @@
 'use client'
 
-import {Button} from "@/components/ui/button"
-import {Card} from "@/components/ui/card";
-import {useRouter} from "next/navigation";
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card";
 
 const cards = [
   {
@@ -38,8 +37,6 @@ const cards = [
 ];
 
 const OurServices = () => {
-  const router = useRouter()
-
   return (
     <div className="mb-16">
       <div className="flex flex-col gap-10 px-4 py-10 @container">
@@ -54,7 +51,7 @@ const OurServices = () => {
           </div>
           <Button
             className="rounded-full p-6 mt-5"
-            onClick={() => router.push('/services')}
+            onClick={() => window.history.pushState(null, null, '/services')}
           >
             <span className="truncate">Learn More</span>
           </Button>
@@ -66,7 +63,7 @@ const OurServices = () => {
             <Card key={index} className="flex flex-col gap-3 pb-3 border-none shadow-none">
               <div
                 className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                style={{backgroundImage: `url("${card.image}")`}}
+                style={{ backgroundImage: `url("${card.image}")` }}
               ></div>
               <div>
                 <p className="text-[#0e141b] text-base font-medium leading-normal">{card.title}</p>
@@ -74,7 +71,7 @@ const OurServices = () => {
               </div>
             </Card>
           ))
-        } 
+        }
       </div>
     </div>
   )

@@ -1,10 +1,8 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
 
 const Banner = () => {
-  const router = useRouter()
   return (
     <div className="@container">
       <div className="@[480px]:p-4">
@@ -19,7 +17,7 @@ const Banner = () => {
                 <h1
                   className="text-background text-2xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                 >
-                  Welcome to 
+                  Welcome to
                 </h1>
                 <h1
                   className="text-background text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"

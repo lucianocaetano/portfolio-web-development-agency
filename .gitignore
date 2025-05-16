@@ -42,3 +42,6 @@ next-env.d.ts
 
 # npm files
 package-lock.json
+
+# Astro
+.astro

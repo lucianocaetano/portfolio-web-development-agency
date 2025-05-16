@@ -1,6 +1,6 @@
 'use client'
 
-import {Button} from "./ui/button"
+import { Button } from "./ui/button"
 
 import {
   NavigationMenu,
@@ -9,19 +9,15 @@ import {
 } from "@/components/ui/navigation-menu"
 
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
-import {NavigationMenuLink} from "@radix-ui/react-navigation-menu"
-
-import { useRouter } from 'next/navigation'
+import { NavigationMenuLink } from "@radix-ui/react-navigation-menu"
 
 const Navbar = () => {
-  const router = useRouter()
-
   return (
     <nav className="sticky top-0 bg-slate-50 z-60 px-10 py-3 h-[90px] flex items-center justify-center">
       <div className="flex w-full max-w-7xl mx-auto">
-        <div 
+        <div
           className="flex items-center gap-4 cursor-pointer"
-          onClick={() => router.push('/')}
+          onClick={() => window.history.pushState(0, null, '/')}
         >
           <div className="size-8">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +34,7 @@ const Navbar = () => {
           </div>
           <h1 className="text-neutral-950 text-2xl font-bold leading-tight">Percy Pocket Solutions</h1>
         </div>
-        
+
         <div className="flex flex-1 items-center justify-end gap-6">
           <NavigationMenu>
             <NavigationMenuList className="gap-4">
@@ -49,18 +45,18 @@ const Navbar = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/about">
-                  About 
+                  About
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/examples">
-                  Examples 
+                  Examples
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem asChild>
                 <Button
                   className="rounded-full py-6"
-                  onClick={() => {router.push('/contact')}}
+                  onClick={() => window.history.pushState(null, null, '/contact')}
                 >
                   <span className="truncate">Contact Us</span>
                 </Button>

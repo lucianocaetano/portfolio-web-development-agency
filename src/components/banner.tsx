@@ -1,10 +1,8 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
 
 const Banner = () => {
-  const router = useRouter()
   return (
     <div className="@container">
       <div className="@[480px]:p-4">
@@ -27,7 +25,7 @@ const Banner = () => {
             <Button
               className="rounded-full p-6"
               variant={'secondary'}
-              onClick={() => router.push('/contact')}
+              onClick={() => window.history.pushState(null, null, '/contact')}
             >
               <span className="truncate">Contact Us</span>
             </Button>

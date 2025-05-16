@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar/>
       <div className="layout-container flex h-full grow flex-col">
         <div className="lg:px-40 flex flex-1 justify-center">
-          <div className="layout-content-container flex flex-col max-w-[1000px] flex-1">
+          <div className="layout-content-container flex flex-col max-w-[1150px] flex-1">
             <Banner/> 
             <OurServices/>
           </div>

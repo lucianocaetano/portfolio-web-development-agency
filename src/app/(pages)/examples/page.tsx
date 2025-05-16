@@ -57,13 +57,13 @@ const Examples = () => {
               projects.map((project) => (
                 <div key={project.name} className="space-y-8 my-11">
                   <div className="space-y-8 max-xl:flex-col-reverse xl:items-start items-center flex justify-between">
-                    <div className="space-y-4 w-1/2 pt-2">
+                    <div className="space-y-4 md:w-1/2 pt-2">
                       <h1 className="text-5xl font-serif">{project.name}</h1>
                       <p className="pe-8">
                         {project.content}
                       </p>
                     </div>
-                    <div className="w-1/2">
+                    <div className="xl:w-1/2">
                       {
                         project.images.length === 1 && (
                           <Image src={project.images[0]} alt={project.name} width={700} height={800} className="max-h-[700px] object-contain"/>

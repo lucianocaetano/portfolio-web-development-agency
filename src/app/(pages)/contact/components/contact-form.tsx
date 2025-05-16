@@ -1,14 +1,14 @@
 'use client'
 
 import * as React from "react";
-import { 
-  Card, 
-  CardContent, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import {toast} from "sonner";
+import { toast } from "sonner";
 
 import { z } from "zod"
 
@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -28,9 +27,9 @@ import {
 import { Input } from "@/components/ui/input"
 
 const formSchema = z.object({
-  email: z.string().email().min(1, {'message': 'This field is required'}),
+  email: z.string().email().min(1, { 'message': 'This field is required' }),
   enterprise: z.string().max(80).optional(),
-  content: z.string().min(1, {'message': 'This field is required'}),
+  content: z.string().min(1, { 'message': 'This field is required' }),
 })
 
 export function ContactForm() {
@@ -52,20 +51,20 @@ export function ContactForm() {
         method: 'POST',
         body: JSON.stringify(values)
       })
-      
+
       if (res.status === 200) {
-        toast('Email sent successfully!', {duration: 3000})
-      }else{
-        toast.error('Something went wrong, please try again later', {duration: 3000}) 
-      } 
-    }) 
+        toast('Email sent successfully!', { duration: 3000 })
+      } else {
+        toast.error('Something went wrong, please try again later', { duration: 3000 })
+      }
+    })
 
   }
 
   return (
     <Card className="w-96 space-y-6 shadow-none border-none">
       <CardHeader>
-        <CardTitle className="text-2xl">Contact</CardTitle> 
+        <CardTitle className="text-2xl">Contact</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -75,7 +74,7 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>email</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input required type="email" placeholder="example@gmail.com" {...field} />
                   </FormControl>
@@ -88,9 +87,9 @@ export function ContactForm() {
               name="enterprise"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Enterprise*</FormLabel>
+                  <FormLabel>Company Name*</FormLabel>
                   <FormControl>
-                    <Input placeholder="enterprise" {...field} />
+                    <Input placeholder="Enterprise" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -101,27 +100,24 @@ export function ContactForm() {
               name="content"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Content</FormLabel>
+                  <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="p-6"
               disabled={pending}
             >
               {pending ? 'Sending...' : 'Send'}
             </Button>
           </form>
-        </Form>      
+        </Form>
       </CardContent>
     </Card>
   );

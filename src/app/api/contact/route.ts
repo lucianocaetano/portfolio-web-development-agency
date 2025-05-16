@@ -30,7 +30,7 @@ export const POST = async (request: Request) => {
   }
  
   const mailOptions = {
-    from: 'freelancerdigitalagency@gmail.com',
+    from: process.env.EMAIL_USER,
     to: data.email,
     subject: 'posible cliente: ' + data.enterprise,
     text: data.content,

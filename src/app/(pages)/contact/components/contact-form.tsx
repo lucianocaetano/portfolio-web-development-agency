@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -63,7 +62,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="w-96 space-y-6 shadow-none border-none">
+    <Card className="max-md:w-full max-md:max-w-96 w-96 space-y-6 shadow-none border-none">
       <CardHeader>
         <CardTitle className="text-2xl">Contact</CardTitle> 
       </CardHeader>

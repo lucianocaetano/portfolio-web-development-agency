@@ -24,7 +24,7 @@ const Navbar = () => {
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => router.push('/')}
         >
-          <div className="size-8">
+          <div className="size-5">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_6_319)">
                 <path
@@ -37,7 +37,7 @@ const Navbar = () => {
               </defs>
             </svg>
           </div>
-          <h1 className="text-neutral-950 text-2xl font-bold leading-tight">Percy Pocket Solutions</h1>
+          <h1 className="text-neutral-950 text-xl font-bold leading-tight">Percy Pocket Solutions</h1>
         </div>
         
         <div className="flex flex-1 items-center justify-end gap-6">

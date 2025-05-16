@@ -1,19 +1,22 @@
 import { ContactForm } from "./components/contact-form";
-import { TypographyH1 } from "./typography/H1";
-import { TypographyP } from "./typography/P";
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="max-w-2xl md:flex justify-between min-h-screen max-w-6xl mx-auto space-y-16 font-serif px-6">
-      <div>
-        <TypographyH1>Contact Us</TypographyH1>
-        <TypographyP>Feel free to reach out to us!</TypographyP>
-        <br />
+    <>
+      <div className="flex flex-col md:flex-row md:justify-around md:my-8 w-full">
+        <div className="w-fit self-center md:self-start">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-start">
+            Contact Us
+          </h1>
+          <p className="leading-7 [&:not(:first-child)]:mt-6">
+            Feel free to reach out to us!
+          </p>
+        </div>
+        <div className="mt-8 w-fit self-center md:self-start">
+          <ContactForm />
+        </div>
       </div>
-      <div className="mt-20">
-        <ContactForm />
-      </div>
-    </div>
+    </>
   );
 };
 

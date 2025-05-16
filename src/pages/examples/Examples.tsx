@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import Image from "next/image"
 
 const projects = [
   {
@@ -64,7 +63,7 @@ const Examples = () => {
               <div>
                 {
                   project.images.length === 1 && (
-                    <Image src={project.images[0]} alt={project.name} width={700} height={400} className="max-h-[400px] object-contain" />
+                    <img src={project.images[0]} alt={project.name} width={700} height={400} className="max-h-[400px] object-contain" />
                   )
                 }
                 {
@@ -74,7 +73,7 @@ const Examples = () => {
                         {
                           project.images.map((image, index) => (
                             <CarouselItem key={index} className="flex justify-center items-center">
-                              <Image src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain" />
+                              <img src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain" />
                             </CarouselItem>
                           ))
                         }

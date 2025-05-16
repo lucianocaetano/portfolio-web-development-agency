@@ -10,12 +10,7 @@ import {
 
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu"
-<<<<<<< HEAD
-
-import { useRouter } from 'next/navigation'
 import MenuMobile from "./menu-mobile"
-=======
->>>>>>> 633ea4f (feat: initial Astro support)
 
 const Navbar = () => {
   return (
@@ -63,12 +58,13 @@ const Navbar = () => {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem asChild>
-                <Button
-                  className="rounded-full py-6"
-                  onClick={() => window.history.pushState(null, null, '/contact')}
-                >
-                  <span className="truncate">Contact Us</span>
-                </Button>
+                <a href="/contact">
+                  <Button
+                    className="rounded-full py-6"
+                  >
+                    <span className="truncate">Contact Us</span>
+                  </Button>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

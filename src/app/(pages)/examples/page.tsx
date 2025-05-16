@@ -31,70 +31,65 @@ const projects = [
     name: "Order management",
     content: "A web application for a home delivery company, including a blog and online sales system, as well as a contact section.",
     images: [
-      "/landing_page_package_django/image 1.png", 
+      "/landing_page_package_django/image 1.png",
       "/landing_page_package_django/image 2.png",
       "/landing_page_package_django/image 3.png",
       "/landing_page_package_django/image 4.png",
     ]
   },
   {
-    name: 'Space launch website',
-    content: "Development and update of the website for 'Space Launches'. This project consisted of a partial redesign focused on improving the visual presentation and organization of content (upcoming launches, recent videos), along with a complete migration from HTML to Astro to improve loading speed, maintainability, and offer a smoother browsing experience.",
+    name: 'LanzamientosEspaciales\' website',
+    content: "Development and update of the website for 'LanzamientosEspaciales'. This project consisted of a partial redesign focused on improving the visual presentation and organization of content (upcoming launches, recent videos), along with a complete migration from HTML to Astro to improve loading speed, maintainability, and offer a smoother browsing experience.",
     images: [
-      '/spacial_web/santif project.png', 
+      '/spacial_web/santif project.png',
     ]
   }
 ]
 
 const Examples = () => {
- 
+
   return (
-    <div className="mb-8">
-      <div className="layout-container flex h-full grow flex-col">
-        <div className="lg:px-40 flex flex-1 justify-center">
-          <div className="layout-content-container flex-col max-w-7xl px-4">
-            {
-              projects.map((project) => (
-                <div key={project.name} className="space-y-8 my-11">
-                  <div className="space-y-8 max-xl:flex-col-reverse xl:items-start items-center flex justify-between">
-                    <div className="space-y-4 md:w-1/2 pt-2">
-                      <h1 className="text-5xl font-serif">{project.name}</h1>
-                      <p className="pe-8">
-                        {project.content}
-                      </p>
-                    </div>
-                    <div className="xl:w-1/2">
-                      {
-                        project.images.length === 1 && (
-                          <Image src={project.images[0]} alt={project.name} width={700} height={800} className="max-h-[700px] object-contain"/>
-                        )
-                      }
-                      {
-                        project.images.length > 1 && (
-                          <Carousel>
-                            <CarouselContent>
-                              {
-                                project.images.map((image, index) => (
-                                  <CarouselItem key={index} className="flex justify-center items-center">
-                                    <Image src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain"/>
-                                  </CarouselItem>
-                                ))
-                              }
-                            </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                          </Carousel>
-                        )
-                      }
-                    </div>
-                  </div>
-                </div>
-              ))
-            } 
+    <>
+      <h1 className="text-5xl">Our Projects</h1>
+      {
+        projects.map((project) => (
+          <div key={project.name} className="space-y-8 my-11 w-full">
+            <div className="space-y-8 grid gap-2 md:grid-cols-2">
+              <div className="space-y-4 pt-2">
+                <h2 className="text-3xl">{project.name}</h2>
+                <p className="pe-8">
+                  {project.content}
+                </p>
+              </div>
+              <div>
+                {
+                  project.images.length === 1 && (
+                    <Image src={project.images[0]} alt={project.name} width={700} height={400} className="max-h-[400px] object-contain" />
+                  )
+                }
+                {
+                  project.images.length > 1 && (
+                    <Carousel>
+                      <CarouselContent>
+                        {
+                          project.images.map((image, index) => (
+                            <CarouselItem key={index} className="flex justify-center items-center">
+                              <Image src={image} alt={project.name + index} width={800} height={400} className="max-h-[400px] object-contain" />
+                            </CarouselItem>
+                          ))
+                        }
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  )
+                }
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        ))
+      }
+    </>
   )
 }
 

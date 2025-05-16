@@ -1,28 +1,32 @@
 'use client'
 
-import {Button} from "@/components/ui/button";
-import {BookOpen, TabletSmartphone, Server, Atom, PenLine, Palette, ShieldCheck, ShoppingCart, DollarSign, HardDriveUpload, Key, Database, DatabaseZap, ShieldAlert, ArrowUpToLine, Container, Github} from "lucide-react";
-import {useRouter} from "next/navigation";
+import { BookOpen, TabletSmartphone, Server, Atom, PenLine, Palette, ShieldCheck, ShoppingCart, DollarSign, HardDriveUpload, Key, Database, DatabaseZap, ShieldAlert, ArrowUpToLine, Container, Github } from "lucide-react";
+
+type Service = {
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+}
 
 const serviceSections = [
-  
+
   {
     name: 'Frontend',
     services: [
-      { name: 'Responsive Interfaces', description: 'Designs that adapt smoothly across all devices.', icon: <TabletSmartphone size={30}/> },
-      { name: 'Single Page Applications (SPA)', description: 'Dynamic, fast-loading applications using JavaScript frameworks.', icon: <BookOpen size={30}/> },
-      { name: 'Integration with REST and GraphQL APIs', description: 'Connect frontend with real-time backend data.', icon: <Server size={30}/> },
-      { name: 'Use of modern frameworks like React', description: 'Clean, maintainable UI with top-tier libraries.', icon: <Atom size={30}/> },    
+      { name: 'Responsive Interfaces', description: 'Designs that adapt smoothly across all devices.', icon: <TabletSmartphone size={30} /> },
+      { name: 'Single Page Applications (SPA)', description: 'Dynamic, fast-loading applications using JavaScript frameworks.', icon: <BookOpen size={30} /> },
+      { name: 'Integration with REST and GraphQL APIs', description: 'Connect frontend with real-time backend data.', icon: <Server size={30} /> },
+      { name: 'Use of modern frameworks like React', description: 'Clean, maintainable UI with top-tier libraries.', icon: <Atom size={30} /> },
     ],
   },
- 
+
   {
     name: 'UI/UX',
     services: [
-      { name: 'User-centered Design', description: 'Designs tailored to user needs and behaviors.', icon: <PenLine size={30}/> },
-      { name: 'Prototypes with Figma', description: 'Interactive design prototypes before development.', icon: <Palette size={30}/>},
-      { name: 'Usability Audits', description: 'Evaluate and improve the overall user experience.', icon: <ShieldCheck size={30}/>},
-    ],  
+      { name: 'User-centered Design', description: 'Designs tailored to user needs and behaviors.', icon: <PenLine size={30} /> },
+      { name: 'Prototypes with Figma', description: 'Interactive design prototypes before development.', icon: <Palette size={30} /> },
+      { name: 'Usability Audits', description: 'Evaluate and improve the overall user experience.', icon: <ShieldCheck size={30} /> },
+    ],
   },
   /*{
     name: 'Mobile',
@@ -35,61 +39,62 @@ const serviceSections = [
   {
     name: 'eCommerce',
     services: [
-      { name: 'Custom E-commerce Solutions', description: 'Tailored online store development to fit your business.', icon: <ShoppingCart size={30}/>},
-      { name: 'Payment Gateway Integrations (PayPal, Stripe)', description: 'Secure and seamless payment processing.', icon: <DollarSign size={30}/>},
-    ],  
+      { name: 'Custom E-commerce Solutions', description: 'Tailored online store development to fit your business.', icon: <ShoppingCart size={30} /> },
+      { name: 'Payment Gateway Integrations (PayPal, Stripe)', description: 'Secure and seamless payment processing.', icon: <DollarSign size={30} /> },
+    ],
   },
   {
     name: 'Backend',
     services: [
-      { name: 'Documented APIs', description: 'Well-structured APIs with OpenAPI/Swagger documentation.', icon: <HardDriveUpload size={30}/> },
-      { name: 'JWT/OAuth Authentication', description: 'Secure user authentication and authorization mechanisms.', icon: <Key size={30}/> },
-      { name: 'Database Integration', description: 'Seamless connections with SQL and NoSQL databases.', icon: <Database size={30}/> },
-      { name: 'Development with Node.js, Laravel, and Spring Boot', description: 'Backend solutions built with modern frameworks.', icon: <DatabaseZap size={30}/> },
-      { name: 'Automated API Testing', description: 'Ensure reliability with unit and integration tests.', icon: <ShieldAlert size={30}/> },    
+      { name: 'Documented APIs', description: 'Well-structured APIs with OpenAPI/Swagger documentation.', icon: <HardDriveUpload size={30} /> },
+      { name: 'JWT/OAuth Authentication', description: 'Secure user authentication and authorization mechanisms.', icon: <Key size={30} /> },
+      { name: 'Database Integration', description: 'Seamless connections with SQL and NoSQL databases.', icon: <Database size={30} /> },
+      { name: 'Development with Node.js, Laravel, and Spring Boot', description: 'Backend solutions built with modern frameworks.', icon: <DatabaseZap size={30} /> },
+      { name: 'Automated API Testing', description: 'Ensure reliability with unit and integration tests.', icon: <ShieldAlert size={30} /> },
     ],
   },
   {
     name: 'DevOps',
-     services: [
-      { name: 'Continuous Deployment (CI/CD)', description: 'Automated build, test, and deployment pipelines.', icon: <ArrowUpToLine size={30}/> },
-      { name: 'Application Dockerization', description: 'Container-based deployment for portability and scalability.', icon: <Container size={30}/> },
-      { name: 'Automation with GitHub Actions', description: 'Custom workflows to streamline development.', icon: <Github size={30}/> },
-      { name: 'Monitoring with tools like Prometheus or Grafana', description: 'Track performance and detect issues early.', icon: <PenLine size={30}/> },
-    ],  
+    services: [
+      { name: 'Continuous Deployment (CI/CD)', description: 'Automated build, test, and deployment pipelines.', icon: <ArrowUpToLine size={30} /> },
+      { name: 'Application Dockerization', description: 'Container-based deployment for portability and scalability.', icon: <Container size={30} /> },
+      { name: 'Automation with GitHub Actions', description: 'Custom workflows to streamline development.', icon: <Github size={30} /> },
+      { name: 'Monitoring with tools like Prometheus or Grafana', description: 'Track performance and detect issues early.', icon: <PenLine size={30} /> },
+    ],
   },
 ];
 
 
-const Services = () => {
-  const router = useRouter();
-
+const ServiceCard = ({ name, description, icon }: Service) => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-8 py-[100px] space-y-16 font-serif">
+    <li key={name} className="text-lg max-w-7xl w-full flex justify-between items-center p-16 shadow-sm h-full">
+      <div className="space-y-4">
+        <h2 className="text-xl">{name}</h2>
+        <p className="text-md text-gray-600">{description}</p>
+      </div>
+      <div className="pe-5">
+        {icon}
+      </div>
+    </li>
+  )
+}
+
+const Services = () => {
+  return (
+    <>
       <h1 className="text-5xl">Our Services</h1>
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">
           <h2 className="text-3xl">{section.name}</h2>
           <ul className="space-y-16">
             {section.services.map((service) => (
-              <li key={service.name} className="text-lg max-w-7xl w-full flex justify-between items-center p-8 shadow-sm">
-                <div className="space-y-6">
-                  <h2 className="text-xl">{service.name}</h2>
-                  <p className="ms-2text-md font-serif text-gray-600">{service.description}</p>
-                  <Button onClick={() => router.push('/contact')}>
-                    Learn more
-                  </Button>
-                </div>
-                <div className="pe-5">
-                  {service.icon}
-                </div>
-              </li>
+              <ServiceCard key={service.name} {...service} />
             ))}
           </ul>
         </div>
       ))}
 
-    </div>
+    </>
   )
 }
 

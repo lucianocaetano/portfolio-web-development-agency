@@ -18,13 +18,13 @@ const Navbar = () => {
   const router = useRouter()
 
   return (
-    <nav className="sticky top-0 bg-white z-50 px-10 py-3 h-[90px] flex items-center justify-center">
+    <nav className="sticky top-0 bg-slate-50 z-60 px-10 py-3 h-[90px] flex items-center justify-center">
       <div className="flex w-full max-w-7xl mx-auto">
         <div 
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => router.push('/')}
         >
-          <div className="size-4">
+          <div className="size-5">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_6_319)">
                 <path
@@ -37,7 +37,7 @@ const Navbar = () => {
               </defs>
             </svg>
           </div>
-          <h2 className="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em]">Percy pocket solution</h2>
+          <h1 className="text-neutral-950 text-xl font-bold leading-tight">Percy Pocket Solutions</h1>
         </div>
         
         <div className="flex flex-1 items-center justify-end gap-6">

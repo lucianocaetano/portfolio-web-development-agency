@@ -1,3 +1,5 @@
+'use client'
+
 import { MailIcon, LinkedinIcon } from 'lucide-react'
 
 const Footer = () => {
@@ -6,10 +8,10 @@ const Footer = () => {
       <p>Percy Pocket Solutions &copy; 2025</p>
       <div className="flex gap-6 mt-6">
         <a href="mailto:contactus@percypocket.solutions" aria-label="Email" className='"cursor-pointer pointer-events-auto"' >
-           <MailIcon size={24} strokeWidth={1.5} />
+          <MailIcon size={24} strokeWidth={1.5} />
         </a>
         <a href="https://www.linkedin.com/company/percy-pocket-solutions/" aria-label="Linkedin" target="_blank" rel="noopener noreferrer" className='"cursor-pointer pointer-events-auto"'>
-           <LinkedinIcon size={24} strokeWidth={1.5} />
+          <LinkedinIcon size={24} strokeWidth={1.5} />
         </a>
       </div>
     </footer>

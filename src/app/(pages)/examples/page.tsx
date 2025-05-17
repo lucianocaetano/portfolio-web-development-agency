@@ -50,10 +50,10 @@ const Examples = () => {
 
   return (
     <>
-      <h1 className="text-5xl">Our Projects</h1>
+      <h1 className="text-5xl font-bold">Our Projects</h1>
       {
         projects.map((project) => (
-          <div key={project.name} className="space-y-8 my-11 w-full">
+          <div key={project.name} className="w-full">
             <div className="space-y-8 grid gap-2 md:grid-cols-2">
               <div className="space-y-4 pt-2">
                 <h2 className="text-3xl">{project.name}</h2>

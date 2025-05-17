@@ -82,7 +82,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
 const Services = () => {
   return (
     <>
-      <h1 className="text-5xl">Our Services</h1>
+      <h1 className="text-5xl font-bold">Our Services</h1>
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">
           <h2 className="text-3xl">{section.name}</h2>

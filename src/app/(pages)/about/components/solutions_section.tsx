@@ -1,39 +1,39 @@
-import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
-import {Check, Cloud, Database, HeartPlus, Pen, Router, Wrench} from "lucide-react"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Check, Cloud, Database, HeartPlus, Pen, Router, Wrench } from "lucide-react"
 
 const solutions = [
   {
-    icon: <Wrench/>,
+    icon: <Wrench />,
     name: 'Maintenance',
     content: 'We take care of your website, from updates to security patches and ongoing maintenance. We ensure that your website is always up-to-date and secure, so you can focus on growing your business.',
   },
   {
-    icon: <Pen/>,
+    icon: <Pen />,
     name: 'Frontend Development',
     content: 'We build custom web applications and portals using the latest technologies and frameworks, so your team can focus on building your business.',
   },
   {
-    icon: <Cloud/>,
+    icon: <Cloud />,
     name: 'Deployment',
     content: 'We deploy your website on the most popular cloud platforms, so you can focus on growing your business.',
   },
   {
-    icon: <Router/>,
+    icon: <Router />,
     name: 'Serverless',
     content: 'We build serverless applications using the latest technologies and frameworks, so you can focus on building your business.',
   },
   {
-    icon: <Database/>,
+    icon: <Database />,
     name: 'Database Management',
     content: 'We manage your database, so you can focus on building your business.',
   },
   {
-    icon: <HeartPlus/>,
+    icon: <HeartPlus />,
     name: 'Migration Support',
     content: 'We provide migration support for your database, so you can focus on building your business.',
   },
   {
-    icon: <Check/>,
+    icon: <Check />,
     name: 'Documented APIs',
     content: 'We design and implement APIs that are easy to use and understand, so your team can integrate your website with other systems and services.',
   },
@@ -41,9 +41,9 @@ const solutions = [
 ]
 
 const SolutionsSection = () => {
-  
+
   return (
-    <div className="px-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {
         solutions.map((item, index) => (
           <Card key={index} className="w-full rounded-sm">

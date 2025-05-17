@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const OurMethodology = () => {
   return (
-    <div className="ps-4 space-y-11">
+    <section>
       <h2 className="text-4xl">Our methodology</h2>
-      <div className="mt-8 grid grid-cols-3 gap-8">
+      <div className="mt-8 grid md:grid-cols-3 gap-8">
         <Card className="rounded-none">
           <CardHeader>
             <CardTitle> Transparency in the process</CardTitle>
@@ -42,7 +42,7 @@ const OurMethodology = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </section>
   )
 }
 

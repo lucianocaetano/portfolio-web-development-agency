@@ -69,7 +69,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
   return (
     <li key={name} className="text-lg max-w-7xl w-full flex justify-between items-center p-16 shadow-sm h-full">
       <div className="space-y-4">
-        <h2 className="text-xl">{name}</h2>
+        <h2 className="text-2xl">{name}</h2>
         <p className="text-md text-gray-600">{description}</p>
       </div>
       <div className="pe-5">

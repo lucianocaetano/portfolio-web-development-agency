@@ -49,7 +49,7 @@ const projects = [
 const Examples = () => {
 
   return (
-    <>
+    <div className="px-4">
       <h1 className="text-5xl">Our Projects</h1>
       {
         projects.map((project) => (
@@ -89,7 +89,7 @@ const Examples = () => {
           </div>
         ))
       }
-    </>
+    </div>
   )
 }
 

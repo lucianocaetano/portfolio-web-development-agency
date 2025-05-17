@@ -4,7 +4,7 @@ const OurMethodology = () => {
   return (
     <div className="ps-4 space-y-11">
       <h2 className="text-4xl">Our methodology</h2>
-      <div className="mt-8 grid grid-cols-3 gap-8">
+      <div className="mt-8 grid xl:grid-cols-3 gap-8">
         <Card className="rounded-none">
           <CardHeader>
             <CardTitle> Transparency in the process</CardTitle>

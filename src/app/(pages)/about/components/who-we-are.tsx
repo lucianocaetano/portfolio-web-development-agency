@@ -2,7 +2,7 @@
 const WhoWeAre = () => {
 
   return (
-    <div className="space-y-11 px-4 w-7/8 md:w-3/4 self-center">
+    <div className="space-y-11 px-4 w-7/8 md:w-3/4">
       <h1 className="text-5xl">Who we are</h1>
       <div className="space-y-4">
         <p className="pe-6">

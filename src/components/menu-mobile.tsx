@@ -26,7 +26,7 @@ const MenuMobile = () => {
           <Menu />
         </button>
       </SheetTrigger>
-      <SheetContent side="top" className="h-full">
+      <SheetContent side="top" className="h-full pt-8">
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>

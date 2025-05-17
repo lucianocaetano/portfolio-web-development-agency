@@ -34,9 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}>
       <body
-        className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+        className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
+      >
         <Navbar />
-        <main className="layout-container h-full w-full grow lg:px-48 justify-center flex flex-col flex-1 py-8 space-y-16">
+        <main className="h-full mx-auto max-w-[1540px] w-full lg:px-48 justify-center flex flex-col flex-1 py-8 space-y-16">
           {children}
           <Toaster/>
         </main>

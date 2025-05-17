@@ -62,7 +62,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="w-96 space-y-6 shadow-none border-none">
+    <Card className="w-full sm:w-96 space-y-6 shadow-none border-none">
       <CardHeader>
         <CardTitle className="text-2xl">Contact</CardTitle>
       </CardHeader>

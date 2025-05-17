@@ -1,6 +1,6 @@
 'use client'
 
-import {Menu} from "lucide-react"
+import { Menu } from "lucide-react"
 
 import {
   Sheet,
@@ -9,8 +9,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import {useState} from "react"
-import {useRouter} from "next/navigation"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 const MenuMobile = () => {
   const router = useRouter()
@@ -19,7 +19,7 @@ const MenuMobile = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <button 
+        <button
           onClick={() => setOpen(!open)}
           className="cursor-pointer"
         >
@@ -32,31 +32,31 @@ const MenuMobile = () => {
         </SheetHeader>
         <div className="px-4">
           <ul className="space-y-6">
-            <li 
+            <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
               onClick={() => { router.push('/'); setOpen(false) }}
             >
               Home
             </li>
-            <li 
+            <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
               onClick={() => { router.push('/services'); setOpen(false) }}
             >
               Services
             </li>
-            <li 
+            <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
               onClick={() => { router.push('/about'); setOpen(false) }}
             >
               About
             </li>
-            <li 
+            <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
               onClick={() => { router.push('/examples'); setOpen(false) }}
             >
               Examples
             </li>
-            <li 
+            <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
               onClick={() => { router.push('/contact'); setOpen(false) }}
             >

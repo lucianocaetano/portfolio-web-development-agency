@@ -34,7 +34,7 @@ const MenuMobile = () => {
           <ul className="space-y-6">
             <li 
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/home'); setOpen(false) }}
+              onClick={() => { router.push('/'); setOpen(false) }}
             >
               Home
             </li>

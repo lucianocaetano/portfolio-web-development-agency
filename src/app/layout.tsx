@@ -37,7 +37,7 @@ export default function RootLayout({
         className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
       >
         <Navbar />
-        <main className="h-full mx-auto max-w-[1540px] w-full lg:px-48 flex flex-col flex-1 py-8 space-y-16">
+        <main className="h-full mx-auto max-w-[1540px] w-full xl:px-48 flex flex-col flex-1 py-8 space-y-16">
           {children}
           <Toaster/>
         </main>

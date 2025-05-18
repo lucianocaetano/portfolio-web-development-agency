@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-
 import { z } from 'zod';
 
 const validZodSchema = z.object({

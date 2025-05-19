@@ -8,8 +8,8 @@ const ContactSection = () => {
 
   return (
     <div className="text-center space-y-2 my-16">
-      <h2 className="text-5xl font-serif">Have you read it yet?</h2>
-      <p className="text-gray-700">Are we ready to help you with your software development needs</p>
+      <h2 className="text-5xl font-serif">Contact us!</h2>
+      <p className="text-gray-700">We&apos;re ready to create a solution tailored to your needs.</p>
       <Button
         className="mt-5 p-6 rounded-full"
         onClick={() => router.push('/contact')}

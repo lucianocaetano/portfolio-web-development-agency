@@ -67,14 +67,12 @@ const serviceSections = [
 
 const ServiceCard = ({ name, description, icon }: Service) => {
   return (
-    <li key={name} className="text-lg max-w-7xl w-full flex justify-between items-center p-8 shadow-sm h-full">
+    <li key={name} className="text-lg max-w-7xl w-full flex-col justify-between items-center p-8 shadow-sm h-full cursor-pointer">
       <div className="space-y-6">
+        <div className="flex justify-center">{icon}</div>
         <h2 className="text-xl">{name}</h2>
-        <p className="ms-2 text-md text-gray-600">{description}</p>
       </div>
-      <div className="pe-5">
-        {icon}
-      </div>
+      <p className="ms-2 text-md text-gray-600">{description}</p>
     </li>
   )
 }

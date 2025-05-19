@@ -3,7 +3,7 @@ import { ContactForm } from "./components/contact-form";
 const ContactPage: React.FC = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-around md:my-8 w-full">
+      <div className="flex max-xl:flex-col justify-between px-8 w-full pt-16">
         <div className="w-fit self-center md:self-start">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-start">
             Contact Us

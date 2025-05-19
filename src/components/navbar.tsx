@@ -37,7 +37,7 @@ const Navbar = () => {
               </defs>
             </svg>
           </div>
-          <h1 className="text-2xl font-bold leading-tight">Percy Pocket Solutions</h1>
+          <h1 className="text-2xl font-bold leading-tight">Percy Pocket</h1>
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-6">

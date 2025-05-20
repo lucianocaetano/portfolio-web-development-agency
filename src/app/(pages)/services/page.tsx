@@ -67,7 +67,7 @@ const serviceSections = [
 
 const ServiceCard = ({ name, description, icon }: Service) => {
   return (
-    <li key={name} className="text-lg max-w-7xl w-full flex-col justify-between items-center p-8 shadow-sm h-full cursor-pointer">
+    <li key={name} className="text-lg justify-between items-center p-8 shadow-sm h-full cursor-pointer">
       <div className="space-y-6">
         <div className="flex justify-center">{icon}</div>
         <h2 className="text-xl">{name}</h2>
@@ -79,12 +79,12 @@ const ServiceCard = ({ name, description, icon }: Service) => {
 
 const Services = () => {
   return (
-    <>
-      <h1 className="text-5xl font-bold">Our Services</h1>
+    <div className="space-y-22">
+      <h1 className="text-5xl mt-8">Our Services</h1>
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">
           <h2 className="text-3xl">{section.name}</h2>
-          <ul className="space-y-16">
+          <ul className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {section.services.map((service) => (
               <ServiceCard key={service.name} {...service} />
             ))}
@@ -92,7 +92,7 @@ const Services = () => {
         </div>
       ))}
 
-    </>
+    </div>
   )
 }
 

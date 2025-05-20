@@ -9,7 +9,7 @@ const Banner = () => {
     <div className="@container">
       <div className="@[480px]:p-4">
         <div
-          className="flex min-h-[500px] rounded-lg p-8 flex-col gap-8 bg-cover bg-center bg-no-repeat items-start justify-end relative"
+          className="flex min-h-[580px] rounded-lg p-8 flex-col gap-8 bg-cover bg-center bg-no-repeat items-start justify-end relative"
           style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/banner.png")' }}
         >
           <div className="absolute bg-foreground/20 w-full h-full top-0 left-0 rounded-lg z-40"></div>

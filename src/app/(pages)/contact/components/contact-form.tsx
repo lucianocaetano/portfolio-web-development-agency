@@ -1,71 +1,123 @@
 'use client'
 
 import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { 
-  Card, 
-  CardContent, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {toast} from "sonner";
+import { toast } from "sonner";
+
+import { z } from "zod"
+
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+
+const formSchema = z.object({
+  email: z.string().email().min(1, { 'message': 'This field is required' }),
+  enterprise: z.string().max(80).optional(),
+  content: z.string().min(1, { 'message': 'This field is required' }),
+})
 
 export function ContactForm() {
-  const [email, setEmail] = React.useState("");
-  const [enterprise, setEnterprise ] = React.useState("");
-  const [content, setContent] = React.useState("");
+  const [pending, startTransition] = React.useTransition();
 
-  const handleContact = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      enterprise: "",
+      content: "",
+    },
+  })
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify({ 
-        email, enterprise, content
+  function onSubmit(values: z.infer<typeof formSchema>) {
+
+    startTransition(async () => {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(values)
       })
+
+      if (res.status === 200) {
+        toast('Email sent successfully!', { duration: 3000 })
+      } else {
+        toast.error('Something went wrong, please try again later', { duration: 3000 })
+      }
     })
-    
-    if (res.status === 200) {
-      toast('Email sent successfully!', {duration: 3000})
-    } 
+
   }
 
   return (
-    <Card className="w-96 space-y-6 shadow-none border-none">
+    <Card className="w-full sm:w-96 space-y-6 shadow-none border-none">
       <CardHeader>
-        <CardTitle className="text-2xl">Contact</CardTitle> 
+        <CardTitle className="text-2xl">Contact</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleContact}>
-          <div className="grid w-full items-center gap-6"> 
-            <div className="flex flex-col space-y-2">
-              <Label htmlFor="name" className="text-lg">Your email:</Label> 
-              <Input id="name" type="email" placeholder="Name of your project" required onChange={(e) => setEmail(e.target.value)} className="h-12 text-lg" /> 
-            </div>
-            <div className="flex flex-col space-y-2">
-              <Label htmlFor="enterprise" className="text-lg">Your enterprise(optional):</Label> 
-              <Input id="enterprise" onChange={(e) => setEnterprise(e.target.value)} placeholder="Name of your project" className="h-12 text-lg" /> 
-            </div>
-            <div className="flex flex-col space-y-2">
-              <Label htmlFor="email" className="text-lg">Content:</Label> 
-              <Textarea id="email" onChange={(e) => setContent(e.target.value)} placeholder="Write your message here" required className="h-32 text-lg" /> 
-            </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input required type="email" placeholder="example@gmail.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="enterprise"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Company Name*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enterprise" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="content"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          </div>
-          <div
-            className="text-right mt-4"
-          >
-            <Button 
-              className="px-6 py-3 text-lg"
+            <Button
               type="submit"
+              className="p-6"
+              disabled={pending}
             >
-              Send
-            </Button> 
-          </div>
-        </form>
+              {pending ? 'Sending...' : 'Send'}
+            </Button>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );

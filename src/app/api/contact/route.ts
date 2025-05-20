@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-
 import { z } from 'zod';
 
 const validZodSchema = z.object({
@@ -28,11 +27,11 @@ export const POST = async (request: Request) => {
       { status: 400 }
     );
   }
- 
+
   const mailOptions = {
-    from: 'freelancerdigitalagency@gmail.com',
-    to: data.email,
-    subject: 'posible cliente: ' + data.enterprise,
+    from: data.email,
+    to: process.env.EMAIL_USER,
+    subject: 'possible client: ' + data.enterprise,
     text: data.content,
   };
 
@@ -47,4 +46,5 @@ export const POST = async (request: Request) => {
       { errors: [error], message: 'Something went wrong' },
       { status: 500 }
     );
-  }};
+  }
+};

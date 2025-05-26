@@ -12,16 +12,16 @@ const Banner = () => {
         style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/banner.png")' }}
       >
         <div className="absolute bg-foreground/20 w-full h-full top-0 left-0 z-40"></div>
-        <div className="absolute z-40">
+        <div className="absolute z-40 max-md:scale-80">
           <div className="mb-8 space-y-4 flex-col text-center">
             <div>
               <h1
-                className="text-background text-2xl leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                className="text-background text-4xl leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
               >
                 Welcome to 
               </h1>
               <h1
-                className="text-background text-4xl leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                className="text-background text-6xl leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
               >
                 Percy Pocket Solutions
               </h1>
@@ -32,7 +32,7 @@ const Banner = () => {
           </div>
           <div className="flex gap-4 items-center justify-center">
             <Button
-              className="rounded-full p-6"
+              className="rounded-full p-6 text-xl"
               onClick={() => router.push('/contact')}
             >
               <span className="truncate">Get Started</span>

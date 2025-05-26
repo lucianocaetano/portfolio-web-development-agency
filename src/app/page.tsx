@@ -1,4 +1,4 @@
-import ContactSection from "./(pages)/about/components/contact-section";
+import ContactSection from "./components/contact-section";
 import Banner from "./components/banner";
 import OurMethodology from "./components/our-methodology";
 import OurServices from "./components/our-services";
@@ -11,8 +11,8 @@ export default function Home() {
       <Banner />
       <div className="w-full max-w-7xl mx-auto space-y-11">
         <SolutionsSection/>
-        <OurServices />
         <WhoWeAre/>
+        <OurServices />
         <OurMethodology/>
         <ContactSection/>
       </div>

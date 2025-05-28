@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
-import { NextResponse } from 'next/server';
 
 const validZodSchema = z.object({
   email: z.string().email(),
@@ -20,12 +19,11 @@ const transporter = nodemailer.createTransport({
 
 export const POST = async (request: Request) => {
   const data = await request.json();
-  console.log("Form data:", data);
 
   const result = validZodSchema.safeParse(data);
   if (!result.success) {
     console.error('Validation error:', result.error.flatten());
-    return NextResponse.json(
+    return Response.json(
       { errors: result.error.flatten(), message: 'Validation failed' },
       { status: 400 }
     );
@@ -36,19 +34,19 @@ export const POST = async (request: Request) => {
     to: process.env.EMAIL_USER,
     replyTo: data.email,
     subject: 'possible client: ' + data.enterprise,
-    text: data.content,
-    html: `<p>${data.content.replace(/\n/g, '<br>')}</p>`,
-  };
+    text: "We have been contacted from: " + data.email + " || " + data.content,
+    html: `<p>We have been contacted from: ${data.email}<br><br>${data.content.replace(/\n/g, '<br>')}</p>`,
+};
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    return NextResponse.json({
+    return Response.json({
       message: 'success',
       info,
     });
   } catch (error) {
     console.error('Error sending email:', error);
-    return NextResponse.json(
+    return Response.json(
       { errors: [error], message: 'Something went wrong' },
       { status: 500 }
     );

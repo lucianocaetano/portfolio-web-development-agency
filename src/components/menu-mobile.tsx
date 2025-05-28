@@ -10,10 +10,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
 
 const MenuMobile = () => {
-  const router = useRouter()
   const [open, setOpen] = useState(false)
 
 
@@ -31,6 +29,16 @@ const MenuMobile = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const Link = ({ href, children }) => (
+    <a
+      className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
+      href={href}
+      onClick={() => setOpen(false)}
+    >
+      {children}
+    </a>
+  );
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -47,36 +55,21 @@ const MenuMobile = () => {
         </SheetHeader>
         <div className="px-4 mt-6">
           <ul className="space-y-6">
-            <li
-              className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/'); setOpen(false) }}
-            >
+            <Link href="/">
               Home
-            </li>
-            <li
-              className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/services'); setOpen(false) }}
-            >
+            </Link>
+            <Link href="/services">
               Services
-            </li>
-            <li
-              className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/about'); setOpen(false) }}
-            >
+            </Link>
+            <Link href="/about">
               About
-            </li>
-            <li
-              className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/examples'); setOpen(false) }}
-            >
+            </Link>
+            <Link href="/examples">
               Examples
-            </li>
-            <li
-              className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"
-              onClick={() => { router.push('/contact'); setOpen(false) }}
-            >
+            </Link>
+            <Link href="/contact">
               Contact
-            </li>
+            </Link>
           </ul>
         </div>
       </SheetContent>

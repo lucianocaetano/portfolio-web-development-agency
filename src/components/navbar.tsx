@@ -16,9 +16,9 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-background z-60 px-10 py-3 h-20 flex items-center justify-center">
       <div className="flex w-full max-w-7xl mx-auto">
-        <div
+        <a
           className="flex items-center gap-4 cursor-pointer"
-          onClick={() => window.history.pushState(0, null, '/')}
+          href="/"
         >
           <div className="size-5">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@ const Navbar = () => {
             </svg>
           </div>
           <h1 className="text-2xl font-bold leading-tight">Percy Pocket</h1>
-        </div>
+        </a>
 
         <div className="flex flex-1 items-center justify-end gap-6">
           <div className="md:hidden flex">

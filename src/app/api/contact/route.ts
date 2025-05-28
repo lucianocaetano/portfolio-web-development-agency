@@ -21,7 +21,7 @@ export const POST = async (request: Request) => {
   try {
     validZodSchema.parse(data);
   } catch (error) {
-
+    console.error('Validation error:', error);
     return Response.json(
       { errors: [error], message: 'Something went wrong' },
       { status: 400 }
@@ -42,6 +42,7 @@ export const POST = async (request: Request) => {
       info,
     });
   } catch (error) {
+    console.error('Error sending email:', error);
     return Response.json(
       { errors: [error], message: 'Something went wrong' },
       { status: 500 }

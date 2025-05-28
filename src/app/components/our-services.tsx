@@ -63,7 +63,7 @@ const OurServices = () => {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
         {
           cards.map((card, index) => (
-            <Card key={index} className="flex flex-col gap-3 pb-3 border-none shadow-none">
+            <Card key={index} className="flex flex-col gap-3 pb-3 border-b-2 border-b-transparent hover:border-b-black hover:bg-white transition-all duration-300 ease-in-out shadow-none">
               <div
                 className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
                 style={{backgroundImage: `url("${card.image}")`}}

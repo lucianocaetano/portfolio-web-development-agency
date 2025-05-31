@@ -10,7 +10,7 @@ const Banner = () => {
       <div className="@[480px]:p-4">
         <div
           className="flex min-h-[580px] rounded-lg p-8 flex-col gap-8 bg-cover bg-center bg-no-repeat items-start justify-end relative"
-          style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/banner.png")' }}
+          style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/banner.webp")' }}
         >
           <div className="absolute bg-foreground/20 w-full h-full top-0 left-0 rounded-lg z-40"></div>
           <div className="absolute z-40">
@@ -19,7 +19,7 @@ const Banner = () => {
                 <h1
                   className="text-background text-2xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                 >
-                  Welcome to 
+                  Welcome to
                 </h1>
                 <h1
                   className="text-background text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"

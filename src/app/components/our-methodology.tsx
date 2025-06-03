@@ -1,48 +1,31 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+const MethodologyCard = ({ title, content }: { title: string, content: string }) => {
+  return (
+    <div className="flex flex-col gap-3 p-4 border-none shadow-none bg-[#f0f0f0] items-center rounded-xl">
+      <div className="text-center border-b-2 border-foreground pb-2 w-full">
+        <p className="text-[#0e141b] text-lg font-medium">{title}</p>
+      </div>
+      <p className="text-[#306090] text-sm font-normal leading-normal">{content}</p>
+    </div>
+  )
+}
 
 const OurMethodology = () => {
   return (
-    <section>
-      <h2 className="text-4xl">Our methodology</h2>
+    <section className="py-8">
+      <h2 className="text-5xl">Our methodology</h2>
       <div className="mt-8 grid md:grid-cols-3 gap-8">
-        <Card className="rounded-none">
-          <CardHeader>
-            <CardTitle> Transparency in the process</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              You&apos;ll have access to periodic progress reports. <br />
-              You&apos;ll see work divided into stages: Pending, In Progress, Ready for Review, etc. <br />
-              You work with prioritized tasks, focusing on what&apos;s most valuable to the business first.
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="rounded-none">
-          <CardHeader>
-            <CardTitle> Flexible prioritization</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              You can change priorities if something important comes up, and you can adapt quickly.
-              <br />
-              You have a work system that responds to your business needs.
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="rounded-none">
-          <CardHeader>
-            <CardTitle> Responsibility and focus  </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Every team member knows what they need to do.
-              <br />
-              There&apos;s no disorganization or loose tasks.
-            </p>
-          </CardContent>
-        </Card>
+        <MethodologyCard title={"Transparency in the process"}
+          content={`You'll have access to periodic progress reports. 
+                You'll see work divided into stages: Pending, In Progress, Ready for Review, etc.
+                You work with prioritized tasks, focusing on what's most valuable to the business first.`} />
+        <MethodologyCard title={"Flexible prioritization"}
+          content={`You can change priorities if something important comes up, and you can adapt quickly.
+                You have a work system that responds to your business needs.`} />
+        <MethodologyCard title={"Responsibility and focus"}
+          content={`Every team member knows what they need to do.
+                There's no disorganization or loose tasks.`} />
       </div>
-    </section>
+    </section >
   )
 }
 

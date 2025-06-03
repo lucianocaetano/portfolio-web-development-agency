@@ -2,9 +2,9 @@
 const WhoWeAre = () => {
 
   return (
-    <section className="py-16">
+    <section className="py-8">
       <h1 className="text-5xl">Who we are</h1>
-      <div className="mt-4">
+      <div className="mt-8">
         <p className="text-pretty text-lg">
           We are a company specialized in the development and comprehensive management of web pages and applications.
           Our goal is to provide efficient and customized digital solutions that help boost the online presence of companies and startups like yours.

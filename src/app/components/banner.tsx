@@ -7,7 +7,7 @@ const Banner = () => {
   const router = useRouter()
   return (
     <div
-      className="flex h-[600px] md:h-[750px] w-full max-w-[1500px] mx-auto flex-col gap-8 bg-cover bg-center bg-no-repeat items-center justify-center relative"
+      className="flex h-[36em] w-full mx-auto flex-col gap-8 bg-cover bg-center bg-no-repeat items-center justify-center relative rounded-2xl overflow-hidden"
       style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/banner.webp")' }}
     >
       <div className="absolute bg-foreground/20 w-full h-full top-0 left-0 z-40"></div>
@@ -20,18 +20,18 @@ const Banner = () => {
               Welcome to
             </h1>
             <h1
-              className="text-background text-6xl leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+              className="text-background text-6xl"
             >
               Percy Pocket Solutions
             </h1>
           </div>
-          <p className="text-background text-md w-1/2 mx-auto">
+          <p className="text-background text-lg w-1/2 mx-auto">
             We&apos;re a digital agency that designs and develops custom websites, web apps, and APIs for companies of all sizes.
           </p>
         </div>
         <div className="flex gap-4 items-center justify-center">
           <Button
-            className="rounded-full p-6 text-xl"
+            className="rounded-full p-6 text-xl border-1 border-background"
             onClick={() => router.push('/contact')}
           >
             <span className="truncate">Get Started</span>

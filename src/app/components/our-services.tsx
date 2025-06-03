@@ -1,36 +1,36 @@
 'use client'
 
-import {Button} from "@/components/ui/button"
-import {Card} from "@/components/ui/card";
-import {useRouter} from "next/navigation";
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 const cards = [
   {
-    image: "/our_services_section/serverles function.png",
+    image: "/our_services_section/serverles function.webp",
     title: "Serverless Functions",
     description: "Deploy serverless functions to the cloud for scalable backend logic.",
     price: "$0.40 per million requests"
   },
   {
-    image: "/our_services_section/graphql.png",
+    image: "/our_services_section/graphql.webp",
     title: "GraphQL API",
     description: "Create a custom GraphQL API for your website or web app.",
     price: "Free and open-source"
   },
   {
-    image: "/our_services_section/tailwind.png",
+    image: "/our_services_section/tailwind.webp",
     title: "Tailwind CSS",
     description: "Design beautiful user interfaces with the utility-first CSS framework.",
     price: "Rapidly prototype and iterate on designs"
   },
   {
-    image: "/our_services_section/orms.png",
+    image: "/our_services_section/orms.webp",
     title: "ORMs",
     description: "Access and modify data in your database using moderns ORMs.",
     price: "Type-safe database access for TypeScript, Node.js and Laravel"
   },
   {
-    image: "/our_services_section/next 15.png",
+    image: "/our_services_section/next 15.webp",
     title: "Next.js",
     description: "Build fast, modern web applications with the React framework.",
     price: "The most popular framework for React"
@@ -66,7 +66,7 @@ const OurServices = () => {
             <Card key={index} className="flex flex-col gap-3 pb-3 border-none shadow-none">
               <div
                 className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                style={{backgroundImage: `url("${card.image}")`}}
+                style={{ backgroundImage: `url("${card.image}")` }}
               ></div>
               <div>
                 <p className="text-[#0e141b] text-base font-medium leading-normal">{card.title}</p>
@@ -74,7 +74,7 @@ const OurServices = () => {
               </div>
             </Card>
           ))
-        } 
+        }
       </div>
     </div>
   )

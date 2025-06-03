@@ -79,7 +79,7 @@ const ServiceCard = ({ name, description, icon }: Service) => {
 
 const Services = () => {
   return (
-    <div className="space-y-22">
+    <div className="space-y-22 w-full max-w-7xl mx-auto">
       <h1 className="text-5xl mt-8">Our Services</h1>
       {serviceSections.map((section) => (
         <div key={section.name} className="space-y-16">

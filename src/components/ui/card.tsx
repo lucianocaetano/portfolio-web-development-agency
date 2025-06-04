@@ -6,12 +6,24 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
+      className={cn(className)}
+      {...props}
+    />
+  )
+}
+
+// Nuevo componente envoltorio con efecto hover de borde inferior animado
+function CardWithHoverBorder({ className, children, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm cursor-pointer",
+        "flex flex-col gap-3 pb-3 border-b-2 border-b-transparent hover:border-b-black hover:bg-white transition-all duration-300 ease-in-out shadow-none",
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   )
 }
 
@@ -83,6 +95,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 
 export {
   Card,
+  CardWithHoverBorder,
   CardHeader,
   CardFooter,
   CardTitle,

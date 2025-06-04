@@ -1,3 +1,5 @@
+import { Section, SectionTitle } from "@/components/section"
+
 const MethodologyCard = ({ title, content }: { title: string, content: string }) => {
   return (
     <div className="flex flex-col gap-3 p-4 border-none shadow-none bg-[#f0f0f0] items-center rounded-xl">
@@ -11,8 +13,8 @@ const MethodologyCard = ({ title, content }: { title: string, content: string })
 
 const OurMethodology = () => {
   return (
-    <section className="py-8">
-      <h2 className="text-5xl">Our methodology</h2>
+    <Section>
+      <SectionTitle>Our methodology</SectionTitle>
       <div className="mt-8 grid md:grid-cols-3 gap-8">
         <MethodologyCard title={"Transparency in the process"}
           content={`You'll have access to periodic progress reports. 
@@ -25,7 +27,7 @@ const OurMethodology = () => {
           content={`Every team member knows what they need to do.
                 There's no disorganization or loose tasks.`} />
       </div>
-    </section >
+    </Section>
   )
 }
 

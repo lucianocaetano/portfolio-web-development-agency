@@ -2,6 +2,7 @@
 
 import React from "react";
 import { MonitorSmartphone, Wrench, Bot, Repeat } from "lucide-react";
+import { Section, SectionTitle } from "@/components/section";
 
 type CardType = {
   icon: React.ElementType;
@@ -34,8 +35,8 @@ const cards: CardType[] = [
 
 const OurServices = () => {
   return (
-    <section className="py-8">
-      <h1 className="text-5xl">Our Services</h1>
+    <Section>
+      <SectionTitle>Our Services</SectionTitle>
       <div className="grid grid-rows-2 grid-cols-2 gap-4 justify-center mt-8">
         {
           cards.map((card, index) => {
@@ -51,7 +52,7 @@ const OurServices = () => {
           })
         }
       </div>
-    </section>
+    </Section>
   )
 }
 

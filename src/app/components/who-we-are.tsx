@@ -1,9 +1,10 @@
+import { Section, SectionTitle } from "@/components/section"
 
 const WhoWeAre = () => {
 
   return (
-    <section className="py-8">
-      <h1 className="text-5xl">Who we are</h1>
+    <Section>
+      <SectionTitle>Who we are</SectionTitle>
       <div className="mt-8">
         <p className="text-pretty text-lg">
           We are a company specialized in the development and comprehensive management of web pages and applications.
@@ -14,7 +15,7 @@ const WhoWeAre = () => {
           We focus on creating websites that not only look good, but also perform optimally on all devices, load quickly, and are results-oriented.
         </p>
       </div>
-    </section>
+    </Section>
   )
 }
 

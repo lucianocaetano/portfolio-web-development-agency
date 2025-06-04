@@ -6,24 +6,17 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
-      className={cn(className)}
+      className={cn("cardBase", className)}
       {...props}
     />
   )
 }
 
-// Nuevo componente envoltorio con efecto hover de borde inferior animado
 function CardWithHoverBorder({ className, children, ...props }: React.ComponentProps<"div">) {
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-3 pb-3 border-b-2 border-b-transparent hover:border-b-black hover:bg-white transition-all duration-300 ease-in-out shadow-none",
-        className
-      )}
-      {...props}
-    >
+    <Card className={cn("cardBase", className)} {...props}>
       {children}
-    </div>
+    </Card>
   )
 }
 

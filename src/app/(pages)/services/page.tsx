@@ -1,5 +1,6 @@
 'use client'
 
+import { Section, SectionTitle } from "@/components/section";
 import { BookOpen, TabletSmartphone, Server, Atom, PenLine, Palette, ShieldCheck, ShoppingCart, DollarSign, HardDriveUpload, Key, Database, DatabaseZap, ShieldAlert, ArrowUpToLine, Container, Github } from "lucide-react";
 
 type Service = {
@@ -79,11 +80,11 @@ const ServiceCard = ({ name, description, icon }: Service) => {
 
 const Services = () => {
   return (
-    <div className="space-y-22 w-full max-w-7xl mx-auto">
-      <h1 className="text-5xl mt-8">Our Services</h1>
+    <Section>
+      <SectionTitle>Our Services</SectionTitle>
       {serviceSections.map((section) => (
-        <div key={section.name} className="space-y-16">
-          <h2 className="text-3xl">{section.name}</h2>
+        <div key={section.name} className="my-16">
+          <h2 className="text-3xl my-4">{section.name}</h2>
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {section.services.map((service) => (
               <ServiceCard key={service.name} {...service} />
@@ -91,8 +92,7 @@ const Services = () => {
           </ul>
         </div>
       ))}
-
-    </div>
+    </Section>
   )
 }
 

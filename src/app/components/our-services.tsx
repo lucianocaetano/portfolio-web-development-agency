@@ -3,6 +3,7 @@
 import React from "react";
 import { MonitorSmartphone, Wrench, Bot, Repeat } from "lucide-react";
 import { Section, SectionTitle } from "@/components/section";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/card";
 
 type CardType = {
   icon: React.ElementType;
@@ -39,17 +40,17 @@ const OurServices = () => {
       <SectionTitle>Our Services</SectionTitle>
       <div className="grid grid-rows-2 grid-cols-2 gap-4 justify-center mt-8">
         {
-          cards.map((card, index) => {
-            return (
-              <div key={index} className="flex flex-col gap-3 p-4 border-none shadow-none bg-[#f0f0f0] items-center rounded-xl">
+          cards.map((card, index) => (
+            <Card key={index}>
+              <CardHeader>
                 <card.icon className="size-12" />
-                <p className="text-[#0e141b] text-lg font-medium">{card.title}</p>
-                <div className="text-center border-t-2 border-foreground pt-2 w-full">
-                  <p className="text-[#306090] text-sm font-normal leading-normal">{card.description}</p>
-                </div>
-              </div>
-            );
-          })
+                <CardTitle>{card.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {card.description}
+              </CardContent>
+            </Card>
+          ))
         }
       </div>
     </Section>

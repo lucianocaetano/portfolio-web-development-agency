@@ -1,5 +1,6 @@
 'use client'
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
 import { Section, SectionTitle } from "@/components/section";
 import { BookOpen, TabletSmartphone, Server, Atom, PenLine, Palette, ShieldCheck, ShoppingCart, DollarSign, HardDriveUpload, Key, Database, DatabaseZap, ShieldAlert, ArrowUpToLine, Container, Github } from "lucide-react";
 
@@ -68,13 +69,15 @@ const serviceSections = [
 
 const ServiceCard = ({ name, description, icon }: Service) => {
   return (
-    <li key={name} className="text-lg justify-between items-center p-8 shadow-sm h-full cursor-pointer">
-      <div className="space-y-6">
-        <div className="flex justify-center">{icon}</div>
-        <h2 className="text-xl">{name}</h2>
-      </div>
-      <p className="ms-2 text-md text-gray-600">{description}</p>
-    </li>
+    <Card>
+      <CardHeader>
+        {icon}
+        <CardTitle>{name}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {description}
+      </CardContent>
+    </Card>
   )
 }
 

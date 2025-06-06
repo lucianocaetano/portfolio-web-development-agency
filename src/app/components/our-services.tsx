@@ -41,7 +41,7 @@ const OurServices = () => {
         {
           cards.map((card, index) => {
             return (
-              <div key={index} className="flex flex-col gap-3 p-4 border-none shadow-none bg-[#f0f0f0] items-center rounded-">
+              <div key={index} className="flex flex-col gap-3 p-4 border-none shadow-none bg-[#f0f0f0] items-center rounded-xl">
                 <card.icon className="size-12" />
                 <p className="text-[#0e141b] text-lg font-medium">{card.title}</p>
                 <div className="text-center border-t-2 border-foreground pt-2 w-full">

@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/card";
 import { Section, SectionTitle } from "@/components/section";
-import { BookOpen, TabletSmartphone, Server, Atom, PenLine, Palette, ShieldCheck, ShoppingCart, DollarSign, HardDriveUpload, Key, Database, DatabaseZap, ShieldAlert, ArrowUpToLine, Container, Github } from "lucide-react";
+import { TabletSmartphone, Server, PenLine, Palette, ShoppingCart, DollarSign } from "lucide-react";
 
 type Service = {
   name: string;
@@ -11,61 +11,34 @@ type Service = {
 }
 
 const serviceSections = [
-
   {
-    name: 'Frontend',
+    name: 'Web & Mobile Development',
     services: [
-      { name: 'Responsive Interfaces', description: 'Designs that adapt smoothly across all devices.', icon: <TabletSmartphone size={30} /> },
-      { name: 'Single Page Applications (SPA)', description: 'Dynamic, fast-loading applications using JavaScript frameworks.', icon: <BookOpen size={30} /> },
-      { name: 'Integration with REST and GraphQL APIs', description: 'Connect frontend with real-time backend data.', icon: <Server size={30} /> },
-      { name: 'Use of modern frameworks like React', description: 'Clean, maintainable UI with top-tier libraries.', icon: <Atom size={30} /> },
+      { name: 'Responsive Websites', description: 'Websites that look great and work smoothly on any device, from phones to desktops.', icon: <TabletSmartphone size={30} /> },
+      { name: 'Mobile App Development', description: 'Custom mobile apps for iOS and Android to help your business reach more customers.', icon: <TabletSmartphone size={30} /> },
+      { name: 'Custom Features', description: 'We build the unique tools and features your business needs to stand out online.', icon: <Server size={30} /> },
+      { name: 'Fast-Loading Pages', description: 'Web pages that open quickly and provide a seamless experience for your visitors.', icon: <Server size={30} /> },
     ],
   },
-
   {
     name: 'UI/UX',
     services: [
-      { name: 'User-centered Design', description: 'Designs tailored to user needs and behaviors.', icon: <PenLine size={30} /> },
-      { name: 'Prototypes with Figma', description: 'Interactive design prototypes before development.', icon: <Palette size={30} /> },
-      { name: 'Usability Audits', description: 'Evaluate and improve the overall user experience.', icon: <ShieldCheck size={30} /> },
+      { name: 'User-Friendly Design', description: 'We design with your customers in mind, making everything simple and enjoyable to use.', icon: <PenLine size={30} /> },
+      { name: 'Interactive Previews', description: 'See and test your website design before it goes live.', icon: <Palette size={30} /> },
+      { name: 'Consistent Branding', description: 'We ensure your brand looks and feels the same everywhere online.', icon: <Palette size={30} /> },
+      { name: 'Experience Reviews', description: `We check your website to make sure it's easy and pleasant for everyone.`, icon: <PenLine size={30} /> },
     ],
   },
-  /*{
-    name: 'Mobile',
-    services: [
-      { name: 'Hybrid Apps with React Native' },
-      { name: 'Mobile API Consumption' },
-      { name: 'Publishing on App Store and Google Play' },
-    ],
-  },*/
   {
     name: 'eCommerce',
     services: [
-      { name: 'Custom E-commerce Solutions', description: 'Tailored online store development to fit your business.', icon: <ShoppingCart size={30} /> },
-      { name: 'Payment Gateway Integrations (PayPal, Stripe)', description: 'Secure and seamless payment processing.', icon: <DollarSign size={30} /> },
+      { name: 'Online Stores', description: 'Custom online shops built for your business needs.', icon: <ShoppingCart size={30} /> },
+      { name: 'Easy & Secure Payments', description: 'We set up safe and simple payment options for your customers.', icon: <DollarSign size={30} /> },
+      { name: 'Order Tracking', description: 'Let your customers track their orders with ease.', icon: <Server size={30} /> },
+      { name: 'Product Management', description: 'Easily add, update, or remove products from your store.', icon: <ShoppingCart size={30} /> },
     ],
-  },
-  {
-    name: 'Backend',
-    services: [
-      { name: 'Documented APIs', description: 'Well-structured APIs with OpenAPI/Swagger documentation.', icon: <HardDriveUpload size={30} /> },
-      { name: 'JWT/OAuth Authentication', description: 'Secure user authentication and authorization mechanisms.', icon: <Key size={30} /> },
-      { name: 'Database Integration', description: 'Seamless connections with SQL and NoSQL databases.', icon: <Database size={30} /> },
-      { name: 'Development with Node.js, Laravel, and Spring Boot', description: 'Backend solutions built with modern frameworks.', icon: <DatabaseZap size={30} /> },
-      { name: 'Automated API Testing', description: 'Ensure reliability with unit and integration tests.', icon: <ShieldAlert size={30} /> },
-    ],
-  },
-  {
-    name: 'DevOps',
-    services: [
-      { name: 'Continuous Deployment (CI/CD)', description: 'Automated build, test, and deployment pipelines.', icon: <ArrowUpToLine size={30} /> },
-      { name: 'Application Dockerization', description: 'Container-based deployment for portability and scalability.', icon: <Container size={30} /> },
-      { name: 'Automation with GitHub Actions', description: 'Custom workflows to streamline development.', icon: <Github size={30} /> },
-      { name: 'Monitoring with tools like Prometheus or Grafana', description: 'Track performance and detect issues early.', icon: <PenLine size={30} /> },
-    ],
-  },
+  }
 ];
-
 
 const ServiceCard = ({ name, description, icon }: Service) => {
   return (
@@ -88,7 +61,7 @@ const Services = () => {
       {serviceSections.map((section) => (
         <div key={section.name} className="my-16">
           <h2 className="text-3xl my-4">{section.name}</h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <ul className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
             {section.services.map((service) => (
               <ServiceCard key={service.name} {...service} />
             ))}

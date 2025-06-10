@@ -43,9 +43,9 @@ const MenuMobile = () => {
       </SheetTrigger>
       <SheetContent side="top" className="h-full">
         <SheetHeader className="ps-8">
-          <SheetTitle>Menu</SheetTitle>
+          <SheetTitle></SheetTitle>
         </SheetHeader>
-        <div className="px-4 mt-6">
+        <div className="px-4">
           <ul className="space-y-6">
             <li
               className="cursor-pointer hover:bg-gray-600 hover:text-white p-4 text-lg"

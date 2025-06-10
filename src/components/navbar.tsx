@@ -18,8 +18,8 @@ const Navbar = () => {
   const router = useRouter()
 
   return (
-    <nav className="sticky top-0 bg-background z-60 px-10 py-3 h-20 flex items-center justify-center">
-      <div className="flex w-full max-w-7xl mx-auto">
+    <nav className="sticky top-0 bg-background z-50 px-10 py-3 h-20 flex items-center justify-center">
+      <div className="flex w-full max-w-[1450px] mx-auto">
         <div
           className="flex items-center gap-4 cursor-pointer"
           onClick={() => router.push('/')}
@@ -49,11 +49,6 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/services">
                   Services
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()} href="/about">
-                  About
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>

@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle
-} from "@/components/ui/card";
+} from "@/components/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 

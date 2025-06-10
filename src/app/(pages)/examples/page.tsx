@@ -49,11 +49,11 @@ const projects = [
 const Examples = () => {
 
   return (
-    <>
+    <div className="w-full max-w-7xl mx-auto space-y-16">
       <h1 className="text-5xl font-bold">Our Projects</h1>
       {
         projects.map((project) => (
-          <div key={project.name} className="w-full">
+          <div key={project.name} className="w-full mb-16">
             <div className="space-y-8 grid gap-2 md:grid-cols-2">
               <div className="space-y-4 pt-2">
                 <h2 className="text-3xl">{project.name}</h2>
@@ -89,7 +89,7 @@ const Examples = () => {
           </div>
         ))
       }
-    </>
+    </div>
   )
 }
 
